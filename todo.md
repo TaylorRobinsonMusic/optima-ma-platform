@@ -108,10 +108,70 @@
 ## 🎯 Next Immediate Steps
 
 1. ✅ Test current functionality thoroughly - COMPLETED
-2. Decide: Continue with JSON approach or implement proper Supabase integration
-3. Add missing score data (either calculate or import enriched CSV)
-4. ✅ Contact detail modal - WORKING
-5. Test remaining view modes (Card, Map, Kanban, Sankey)
-6. Test individual filter buttons
-7. Implement export functionality
+2. ✅ Decided: Build safe features first, then switch to Supabase
+3. ✅ Contact detail modal - WORKING
+4. Test remaining view modes (Card, Map, Kanban, Sankey) - SAFE
+5. Test individual filter buttons - SAFE
+6. Implement export functionality - SAFE
+7. Switch to Supabase integration
+8. Add missing score data after Supabase switch
+
+## 🟢 SAFE Tasks (Frontend-only, no rework needed)
+
+These can be built now without causing rework when switching to Supabase:
+
+### View Modes & Display
+- [ ] Test and verify Card view
+- [ ] Test and verify Map view
+- [ ] Test and verify Kanban view
+- [ ] Test and verify Sankey diagram view
+
+### Filtering & Search
+- [ ] Test individual filter buttons (Exit Intent, Accessibility, etc.)
+- [ ] Test Decision Maker filters
+- [ ] Test Connection Degree filters
+- [ ] Test Industry filtering
+- [ ] Test Score range filtering
+- [ ] Test Company size filtering
+- [ ] Test Location filtering
+
+### Export & Reporting
+- [x] Contact export (CSV) - COMPLETED
+- [x] Company export (CSV) - COMPLETED
+- [x] Filtered export (export current view) - COMPLETED
+- [ ] Excel export (requires xlsx library)
+- [ ] Print functionality improvements
+
+### UI/UX Improvements
+- [ ] Improve mobile responsiveness
+- [ ] Add loading states and animations
+- [ ] Improve error messages
+- [ ] Add keyboard shortcuts
+- [ ] Improve accessibility (ARIA labels, etc.)
+
+## 🔴 UNSAFE Tasks (Require database, wait for Supabase switch)
+
+These should NOT be built until after switching to Supabase:
+
+### Data Persistence Features
+- [ ] Add/edit notes on contacts ⛔
+- [ ] Star rating system for contacts ⛔
+- [ ] Tag management ⛔
+- [ ] Pipeline stage changes ⛔
+- [ ] Bulk edit contacts ⛔
+- [ ] CSV import ⛔
+- [ ] Merge duplicate contacts/companies ⛔
+
+### User Management
+- [ ] Multi-user support ⛔
+- [ ] Role-based permissions ⛔
+- [ ] Organization management ⛔
+- [ ] Project management ⛔
+
+### Data & Scoring
+- [ ] Calculate/import Exit Intent Scores ⛔
+- [ ] Calculate/import Accessibility Scores ⛔
+- [ ] Calculate/import Retirement Scores ⛔
+- [ ] Calculate/import Burnout Scores ⛔
+- [ ] Add Age and Years in Role data ⛔
 
