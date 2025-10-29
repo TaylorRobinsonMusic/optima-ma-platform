@@ -71,14 +71,20 @@
 - [ ] Location filtering
 
 ### View Modes
-- [x] Table view (default) - fully functional with pagination
-- [x] View mode buttons present and visible (5 buttons in Companies tab)
-- [ ] Card view - button exists but not fully tested
-- [ ] Map view - button exists but not tested
-- [ ] Kanban view - button exists but not tested
-- [ ] Sankey diagram - button exists but not tested
+- [x] Table view (default) - fully functional with pagination ✅
+- [x] View mode buttons present and visible (5 buttons in Companies tab) ✅
+- [x] Card view - TESTED: Button works but has critical filter bug 🐛
+- [x] Map view - TESTED: Button works but has critical filter bug 🐛
+- [x] Kanban view - TESTED: Button works but has critical filter bug 🐛
+- [x] Sankey diagram - TESTED: Button works but has critical filter bug 🐛
 
-**Note:** All view mode switching buttons are implemented and visible in the UI. Table view works perfectly. Other views require manual testing or code inspection to verify functionality.
+**Testing Results (Oct 29, 2025):**
+- ✅ Table view: Works perfectly with all 7,552 companies
+- 🐛 **CRITICAL BUG:** All alternative view modes (Card, Map, Kanban, Sankey) trigger a filter state bug that causes data to disappear (shows "0 of 0 rows")
+- ✅ Workaround: Clicking "Clear All" button restores the data
+- 📝 Root cause: View mode switching incorrectly modifies filter state
+- 📝 Missing implementations: Card, Map, Kanban, and Sankey view components not fully implemented
+- 📄 Full testing report: `/home/ubuntu/view-modes-testing-RESULTS.md`
 
 ### Data Management
 - [ ] Import new contacts via CSV upload
@@ -100,19 +106,33 @@
 
 ## 🐛 Known Issues
 
+### Data Issues
 - [ ] All score columns showing 0 (need enriched data)
 - [ ] Email and phone fields showing "N/A" (not in CSV)
 - [ ] Qualified Companies showing 0 (no revenue data)
 - [ ] High-Priority Targets showing 0 (depends on revenue data)
+
+### View Mode Bugs (Discovered Oct 29, 2025)
+- [ ] **CRITICAL:** View mode switching triggers filter bug - Card/Map/Kanban/Sankey views show 0 rows
+  - Switching from Table view to any alternative view causes data to disappear
+  - Filter state is incorrectly modified during view mode changes
+  - "Clear All" button restores data (temporary workaround)
+  - Need to fix filter state management in App.tsx
+- [ ] Card view component not rendering (shows empty table instead of cards)
+- [ ] Map view component not rendering (no map visualization appears)
+- [ ] Kanban view component not rendering (no Kanban board appears)
+- [ ] Sankey diagram component not rendering (no diagram appears)
 
 ## 🎯 Next Immediate Steps
 
 1. ✅ Test current functionality thoroughly - COMPLETED
 2. ✅ Decided: Build safe features first, then switch to Supabase
 3. ✅ Contact detail modal - WORKING
-4. Test remaining view modes (Card, Map, Kanban, Sankey) - SAFE
-5. Test individual filter buttons - SAFE
-6. Implement export functionality - SAFE
+4. ✅ Test remaining view modes (Card, Map, Kanban, Sankey) - COMPLETED
+   - Found critical filter state bug affecting all alternative view modes
+   - Documented in `/home/ubuntu/view-modes-testing-RESULTS.md`
+5. 🔴 **FIX VIEW MODE BUG** - HIGH PRIORITY (blocking alternative view modes)
+6. Test individual filter buttons - SAFE
 7. Switch to Supabase integration
 8. Add missing score data after Supabase switch
 
@@ -121,10 +141,15 @@
 These can be built now without causing rework when switching to Supabase:
 
 ### View Modes & Display
-- [ ] Test and verify Card view - IN PROGRESS
-- [ ] Test and verify Map view - IN PROGRESS
-- [ ] Test and verify Kanban view - IN PROGRESS
-- [ ] Test and verify Sankey diagram view - IN PROGRESS
+- [x] Test and verify Card view - COMPLETED ✅ (Button works, but filter bug found)
+- [x] Test and verify Map view - COMPLETED ✅ (Button works, but filter bug found)
+- [x] Test and verify Kanban view - COMPLETED ✅ (Button works, but filter bug found)
+- [x] Test and verify Sankey diagram view - COMPLETED ✅ (Button works, but filter bug found)
+- [ ] Fix view mode filter state bug (HIGH PRIORITY) 🔴
+- [ ] Implement Card view component
+- [ ] Implement Map view component
+- [ ] Implement Kanban view component
+- [ ] Implement Sankey diagram component
 
 ### Filtering & Search
 - [x] Test Contacts: Weights, Filters, Grouping, Columns - COMPLETED ✅ (4/4 working)
