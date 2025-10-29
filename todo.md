@@ -121,10 +121,10 @@
 These can be built now without causing rework when switching to Supabase:
 
 ### View Modes & Display
-- [ ] Test and verify Card view
-- [ ] Test and verify Map view
-- [ ] Test and verify Kanban view
-- [ ] Test and verify Sankey diagram view
+- [ ] Test and verify Card view - IN PROGRESS
+- [ ] Test and verify Map view - IN PROGRESS
+- [ ] Test and verify Kanban view - IN PROGRESS
+- [ ] Test and verify Sankey diagram view - IN PROGRESS
 
 ### Filtering & Search
 - [x] Test Contacts: Weights, Filters, Grouping, Columns - COMPLETED ✅ (4/4 working)
