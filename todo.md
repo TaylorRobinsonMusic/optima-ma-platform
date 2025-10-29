@@ -127,6 +127,8 @@ These can be built now without causing rework when switching to Supabase:
 - [ ] Test and verify Sankey diagram view
 
 ### Filtering & Search
+- [ ] Test Contacts: Weights, Filters, Grouping, Columns - IN PROGRESS
+- [ ] Test Companies: Weights, Filters, Grouping, Columns - IN PROGRESS
 - [ ] Test individual filter buttons (Exit Intent, Accessibility, etc.)
 - [ ] Test Decision Maker filters
 - [ ] Test Connection Degree filters
