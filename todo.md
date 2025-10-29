@@ -127,8 +127,13 @@ These can be built now without causing rework when switching to Supabase:
 - [ ] Test and verify Sankey diagram view
 
 ### Filtering & Search
-- [ ] Test Contacts: Weights, Filters, Grouping, Columns - IN PROGRESS
-- [ ] Test Companies: Weights, Filters, Grouping, Columns - IN PROGRESS
+- [x] Test Contacts: Weights, Filters, Grouping, Columns - COMPLETED ✅ (4/4 working)
+- [x] Test Companies: Weights, Filters, Grouping, Columns - COMPLETED ✅ (4/4 working)
+- [x] Fix Companies Grouping functionality - COMPLETED ✅
+  - Created CompanyGroupingModal component
+  - Added 4 grouping options: No Grouping, By Industry, By Revenue Range, By Location
+  - Integrated into SearchAndFilters and App.tsx
+  - Fully tested and working
 - [ ] Test individual filter buttons (Exit Intent, Accessibility, etc.)
 - [ ] Test Decision Maker filters
 - [ ] Test Connection Degree filters
