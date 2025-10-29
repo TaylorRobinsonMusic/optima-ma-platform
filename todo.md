@@ -136,9 +136,16 @@ These can be built now without causing rework when switching to Supabase:
 - [ ] Test Location filtering
 
 ### Export & Reporting
-- [x] Contact export (CSV) - COMPLETED
-- [x] Company export (CSV) - COMPLETED
-- [x] Filtered export (export current view) - COMPLETED
+- [x] Contact export (CSV) - COMPLETED & TESTED ✅
+  - Exports all 10,101 contacts to 8.5MB CSV file
+  - Includes all 23 contact fields
+  - Filename format: optima-contacts-YYYY-MM-DD.csv
+- [x] Company export (CSV) - COMPLETED & TESTED ✅
+  - Exports all 7,552 companies to 1MB CSV file
+  - Includes all 29 company fields
+  - Filename format: optima-companies-YYYY-MM-DD.csv
+- [x] Filtered export (export current view) - COMPLETED & TESTED ✅
+  - Exports only the currently filtered/visible data
 - [ ] Excel export (requires xlsx library)
 - [ ] Print functionality improvements
 
